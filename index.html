@@ -791,9 +791,9 @@
         <label>예측 오차율 수준 <span>· VPP 기술 등급</span></label>
         <div class="input-wrap">
           <select id="predAccuracy">
-            <option value="top">최고급 (≤4% 오차) — 4원/kWh</option>
-            <option value="mid" selected>중간 (4~6% 오차) — 3원/kWh</option>
-            <option value="low">기초 (6~8% 오차) — 2원/kWh</option>
+            <option value="top">최고급 (≤6% 오차) — 4원/kWh</option>
+            <option value="mid" selected>중간 (6~8% 오차) — 3원/kWh</option>
+            <option value="low">기초 (8% 초과 오차) — 0원/kWh</option>
           </select>
         </div>
       </div>
@@ -952,8 +952,8 @@
         <a href="https://epsis.kpx.or.kr/epsisnew/selectEkmaSmpSmpChart.do?menuId=040201" target="_blank">[소스]</a>
       </li>
       <li>
-        <b>예측 정산금</b> — 산업부 전력시장운영규칙 제24-6차 개정(2025.6 시행). 오차율 ≤4%: 4원/kWh, 4~6%: 3원/kWh, 6~8%: 2원/kWh.
-        <a href="https://blog.haezoom.com/notice_05/" target="_blank">[소스]</a>
+        <b>예측 정산금</b> — 전력거래소 발전량 예측제도 소개. 오차율 ≤6%: 4원/kWh, 6~8%: 3원/kWh, 8% 초과: 0원
+        <a href="https://der.kmos.kr/intro/fr_intro_view10.do" target="_blank">[소스]</a>
       </li>
       <li>
         <b>DR 용량요금</b> — KPX 전력시장. 수요반응자원 kW당 약 27,700원/년 (기후솔루션 2022 보고서 기준; 가스발전 74,800원 대비 약 37% 수준).
@@ -1043,7 +1043,7 @@ const REGION_DATA = {
 // 출처: 전력시장운영규칙 제24-6차 개정 (2025.6 시행)
 // 기존: 오차율 6%이하→4원, 6~8%→3원
 // 개정: 4%이하→4원, 4~6%→3원, 6~8%→2원
-const PRED_RATES = { top: 4, mid: 3, low: 2 };
+const PRED_RATES = { top: 4, mid: 3, low: 0 };
 
 // DR 용량요금 (원/kW·년)
 // 출처: 기후솔루션 2022 보고서 (이코리아 2022-09-21)
